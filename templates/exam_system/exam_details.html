@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Exam Details{% endblock %}
+
+{% block content %}
+
+    <h1>Exam Details</h1>
+    <br>
+    <hr>
+    <h3>Exam Name: <b style="color: green">{{ single_exam_details.exam_name }}</b></h3>
+    <h3>Candidate: <b style="color: green">{{ single_exam_details.exam_user.user.username }}</b></h3>
+    <h3>Question Set Name: <b style="color: green">{{ single_exam_details.exam_question_set.name }}</b></h3>
+    <h3>Correct Answer: <b style="color: green">{{ single_exam_details.exam_question_set.correct_answer }}</b></h3>
+
+    <h3>Start Time: <b style="color: green">{{ single_exam_details.start_time }}</b></h3>
+    <h3>End time: <b style="color: green">{{ single_exam_details.end_time }}</b></h3>
+    <h3>Date: <b style="color: green">{{ single_exam_details.date }}</b></h3>
+    <h3>time_length: <b style="color: green">{{ single_exam_details.time_length }}</b></h3>
+    <h3>Active Status: <b style="color: green">{{ single_exam_details.active_status }}</b></h3>
+
+{% endblock %}

@@ -34,7 +34,7 @@ urlpatterns = [
     path('', include('custom_users.urls', namespace='custom_users')),
 
     # App2 (products_invoices)
-    # path('', include('exam_system.urls', namespace='exam_system')),
+    path('', include('exam_system.urls', namespace='exam_system')),
 
     # Default Login, Logout
     path('accounts/login/', LoginView.as_view(template_name='custom_users/login.html'), name='login'),

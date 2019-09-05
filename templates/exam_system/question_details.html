@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Question Details{% endblock %}
+
+{% block content %}
+
+    <h1>Question Details</h1>
+    <br>
+    <hr>
+    <h3>Name: <b style="color: green">{{ single_question_details.name }}</b></h3>
+    <h3>Correct Answer: <b style="color: green">{{ single_question_details.correct_answer }}</b></h3>
+
+{% endblock %}
+

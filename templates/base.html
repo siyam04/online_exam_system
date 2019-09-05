@@ -11,7 +11,7 @@
           crossorigin="anonymous" />
 
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+{#	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">#}
 </head>
 
 <body>
@@ -31,21 +31,9 @@
             <button type="button" class="btn btn-danger">Logout</button>
         </a>
 
-{#        <a href="{% url 'products_invoices:create_customer' %}">#}
-{#            <button type="button" class="btn btn-primary">Create Customer</button>#}
-{#        </a>#}
-
-{#        <a href="{% url 'products_invoices:create_product' %}">#}
-{#            <button type="button" class="btn btn-primary">Create Product</button>#}
-{#        </a>#}
-{##}
-{#        <a href="{% url 'products_invoices:create_invoice' %}">#}
-{#            <button type="button" class="btn btn-primary">Create Invoice (Order)</button>#}
-{#        </a>#}
-{##}
-{#        <a href="{% url 'products_invoices:view_all_invoices' %}">#}
-{#            <button type="button" class="btn btn-primary">View All Invoices</button>#}
-{#        </a>#}
+        <a href="#">
+            <button type="button" class="btn btn-primary">Start Exam</button>
+        </a>
 
     {% else %}
         <a href="{% url 'login' %}">

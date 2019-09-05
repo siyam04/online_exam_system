@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}All Questions{% endblock %}
+
+{% block content %}
+
+    <h1>All Questions</h1>
+    <br>
+    <hr>
+    {% for question in questions %}
+        <h3><li><a href="{% url 'exam_system:question_details' question.id %}">{{ question.name }}</a></li></h3>
+    {% endfor %}
+
+{% endblock %}
+
