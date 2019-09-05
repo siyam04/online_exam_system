@@ -16,8 +16,23 @@
         <input type="radio" name="ans" value="three">{{ single_question_details.option_3 }}<br>
         <input type="radio" name="ans" value="four">{{ single_question_details.option_4 }}<br>
         <br><br>
-        <input type="submit" value="Submit">
+        <button type="button" class="btn btn-success" onclick="displayRadioValue()">SUBMIT</button>
     </form>
+    <br><br>
+
+    <div id="result"></div>
+
+    <script>
+        function displayRadioValue() {
+            var ele = document.getElementsByName('ans');
+
+            for(i = 0; i < ele.length; i++) {
+                if(ele[i].checked)
+                document.getElementById("result").innerHTML
+                        = "Correct Answer: "+ele[i].value;
+            }
+        }
+    </script>
 
 {% endblock %}
 
