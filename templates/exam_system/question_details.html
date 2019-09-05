@@ -7,6 +7,10 @@
     <h1>Question Details</h1>
     <br>
     <hr>
+    <p>Start Time: {{ single_question_details.start_time }}</p>
+    <p>End Time: {{ single_question_details.end_time }}</p>
+    <p>Date: {{ single_question_details.date }}</p>
+    <hr>
     <li><b>{{ single_question_details.name }}</b></li>
     <hr>
 
@@ -21,6 +25,9 @@
     <br><br>
 
     <div id="result"></div>
+
+    <hr>
+    <p>Total Duration: {{ single_question_details.time_length }}</p>
 
     <script>
         function displayRadioValue() {
