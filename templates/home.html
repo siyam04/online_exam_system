@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <hr>
+    <h1>Dashboard</h1>
+    <hr>
+
+    <!-- Messages -->
+{#    {% include 'messages.html' %}#}
+    <!-- Messages -->
+
+    <!-- Stripe form -->
+{#    <b style="color: red">Stripe Testing</b>#}
+{#    <form action="{% url 'checkout' %}" method="post">#}
+{#        {% csrf_token %}#}
+{#        <article><label><span>Amount is $5.00</span></label></article>#}
+{##}
+{#        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"#}
+{#            data-key = "{{ key }}"#}
+{#            data-image = "https://cutt.ly/1wgJms3"#}
+{#            data-description = "PAYMENT"#}
+{#            data-amount = "500"#}
+{#            data-locale = "auto"></script>#}
+{#    </form>#}
+{#    <hr>#}
+    <!-- Stripe form end -->
+
+    <br><br>
+
+    <!-- Dashboard -->
+    {% if request.user.is_authenticated %}
+        <h3>Welcome <b style="color: green">{{ user.username }}</b></h3><br>
+    {% else %}
+        <h1 style="color: red">You are not logged in!</h1>
+    {% endif %}
+
+    {% if request.user.is_authenticated %}
+
+        {% if profile %}
+            <p>
+                My Profile <a href="{% url 'custom_users:profile_details' profile.id %}">
+                {{ request.user.username }}
+            </a>
+            </p>
+
+        {% else %}
+            <p>
+                Create Profile <a href="{% url 'custom_users:profile_create' %}">
+                {{ request.user.username }}</a>
+            </p>
+        {% endif %}
+
+    {% endif %}
+    <!-- Dashboard -->
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
