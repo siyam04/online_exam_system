@@ -4,8 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 
-from .models import Questions, ExamProcess
-from .forms import ExamForm
+from .models import Questions
+from .forms import QuestionsForm
 
 
 @login_required(login_url='login')
@@ -29,30 +29,11 @@ def question_details(request, id=id):
 
 
 @login_required(login_url='login')
-def exam_form(request):
+def answer_details(request, id=id):
     if request.method == 'POST':
-        form = ExamForm(request.POST)
+        form = QuestionsForm(request.POST)
+        answered_data = request.POST.get('ans4')
+        print(answered_data)
 
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Exam Completed', extra_tags='safe')
-
-            return redirect('home')
-    else:
-        form = ExamForm()
-
-    template = 'exam_system/exam_form.html'
-    context = {'form': form}
-
-    return render(request, template, context)
-
-
-@login_required(login_url='login')
-def exam_details(request, id=id):
-    single_exam_details = ExamProcess.objects.get(id=id)
-
-    template = 'exam_system/exam_details.html'
-    context = {'single_exam_details': single_exam_details}
-
-    return render(request, template, context)
+        return HttpResponse('Correct')
 

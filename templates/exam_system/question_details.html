@@ -7,8 +7,14 @@
     <h1>Question Details</h1>
     <br>
     <hr>
-    <h3>Name: <b style="color: green">{{ single_question_details.name }}</b></h3>
-    <h3>Correct Answer: <b style="color: green">{{ single_question_details.correct_answer }}</b></h3>
+    <li><b>{{ single_question_details.name }}</b></li>
+    <hr>
+    <input type="radio" name="ans1">{{ single_question_details.option_1 }}<br>
+    <input type="radio" name="ans2">{{ single_question_details.option_2 }}<br>
+    <input type="radio" name="ans3">{{ single_question_details.option_3 }}<br>
+    <input type="radio" name="ans4">{{ single_question_details.option_4 }}<br>
+    <br><br>
+    <button type="button" class="btn btn-success">SUBMIT</button>
 
 {% endblock %}
 

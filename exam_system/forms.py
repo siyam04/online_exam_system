@@ -3,27 +3,24 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import TextInput, Select, Textarea, EmailInput, PasswordInput, TimeInput
 
-from .models import ExamProcess
+from .models import Questions
 
 
-class ExamForm(forms.ModelForm):
+class QuestionsForm(forms.ModelForm):
     class Meta:
-        model = ExamProcess
+        model = Questions
 
-        fields = ['exam_name', 'exam_question_set', 'start_time', 'end_time']
-
-        exclude = ['exam_user', 'date', 'active_status']
+        fields = '__all__'
 
         widgets = {
 
-            'exam_name': Select(attrs={'class': 'form-control'}),
-            'exam_question_set': Select(attrs={'class': 'form-control'}),
-            'start_time': TimeInput(attrs={'class': 'form-control'}),
-            'end_time': TimeInput(attrs={'class': 'form-control'}),
+            'name': TextInput(attrs={'class': 'form-control'}),
+            'option_1': TextInput(attrs={'class': 'form-control'}),
+            'option_2': TextInput(attrs={'class': 'form-control'}),
+            'option_3': TextInput(attrs={'class': 'form-control'}),
+            'option_4': TextInput(attrs={'class': 'form-control'}),
 
         }
-
-
 
 
 

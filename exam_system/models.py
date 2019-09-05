@@ -46,7 +46,7 @@ class ExamProcess(models.Model):
 
     class Meta:
         ordering = ['-id']
-        verbose_name_plural = 'ExamProcess'
+        verbose_name_plural = 'Exam Process'
 
     def __str__(self):
         return self.exam_name
