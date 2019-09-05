@@ -30,10 +30,8 @@ def question_details(request, id=id):
 
 @login_required(login_url='login')
 def answer_details(request, id=id):
-    if request.method == 'POST':
-        form = QuestionsForm(request.POST)
-        answered_data = request.POST.get('ans4')
-        print(answered_data)
+    pass
 
-        return HttpResponse('Correct')
+
+
 

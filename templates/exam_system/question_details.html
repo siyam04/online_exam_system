@@ -9,12 +9,15 @@
     <hr>
     <li><b>{{ single_question_details.name }}</b></li>
     <hr>
-    <input type="radio" name="ans1">{{ single_question_details.option_1 }}<br>
-    <input type="radio" name="ans2">{{ single_question_details.option_2 }}<br>
-    <input type="radio" name="ans3">{{ single_question_details.option_3 }}<br>
-    <input type="radio" name="ans4">{{ single_question_details.option_4 }}<br>
-    <br><br>
-    <button type="button" class="btn btn-success">SUBMIT</button>
+
+    <form action="">
+        <input type="radio" name="ans" value="one">{{ single_question_details.option_1 }}<br>
+        <input type="radio" name="ans" value="two">{{ single_question_details.option_2 }}<br>
+        <input type="radio" name="ans" value="three">{{ single_question_details.option_3 }}<br>
+        <input type="radio" name="ans" value="four">{{ single_question_details.option_4 }}<br>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
 
 {% endblock %}
 
