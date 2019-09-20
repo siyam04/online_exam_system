@@ -26,6 +26,8 @@
 
     <div id="result"></div>
 
+    <div id="correct">Correct Answer: {{ single_question_details.correct_answer }}</div>
+
     <hr>
     <p>Total Duration: {{ single_question_details.time_length }}</p>
 
@@ -34,12 +36,14 @@
             var ele = document.getElementsByName('ans');
 
             for(i = 0; i < ele.length; i++) {
-                if(ele[i].checked)
-                document.getElementById("result").innerHTML
-                        = "Correct Answer: "+ele[i].value;
+                if(ele[i].checked) document.getElementById("result").innerHTML = "Selected Answer: " + ele[i].value
             }
         }
     </script>
 
 {% endblock %}
+
+
+
+
 

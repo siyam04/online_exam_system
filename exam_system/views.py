@@ -28,9 +28,9 @@ def question_details(request, id=id):
     return render(request, template, context)
 
 
-@login_required(login_url='login')
-def answer_details(request, id=id):
-    pass
+# @login_required(login_url='login')
+# def answer_details(request, id=id):
+#     pass
 
 
 
